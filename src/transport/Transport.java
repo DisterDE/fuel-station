@@ -20,18 +20,16 @@ public abstract class Transport implements Runnable {
 
     @Override
     public void run() {
-        Thread t = new Thread(() -> {
+        new Thread(() -> {
             while (!isFilled) {
                 ThreadUtils.waitASecond();
                 capacity -= consumptionRate;
             }
-        });
-        t.setDaemon(true);
-        t.start();
+        }).start();
 
         while (!isFilled) {
             ThreadUtils.wait(3);
-            if (capacity < initCapacity * 0.5) {
+            if (capacity < initCapacity * 0.2) {
                 isEmpty = true;
             }
         }

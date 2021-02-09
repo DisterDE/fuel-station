@@ -3,7 +3,7 @@ import transport.Car;
 import transport.Transport;
 import transport.Truck;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
 public class Main {
     public static void main(String[] args) {
         FuelStation station = new FuelStation();
-        List<Transport> transportList = new ArrayList<>(List.of(
+        List<Transport> transportList = new LinkedList<>(List.of(
                 new Bus(), new Bus(), new Bus(),
                 new Car(), new Car(), new Car(), new Car(),
                 new Truck(), new Truck(), new Truck(), new Truck()
